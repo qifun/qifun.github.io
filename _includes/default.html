@@ -6,7 +6,11 @@
 	{% else %}
 	<meta charset="utf-8">
 	{% endif %}
+	{% if page.title %}
 	<title>{{ page.title }}</title>
+	{% else %}
+	<title>{{ site.title }}</title>
+	{% endif %}
 	{% if page.description %}
 	<meta name="description" content="{{ page.description }}">
 	{% endif %}
