@@ -6,20 +6,29 @@ exclude: ["README.md"] # files to exclude
 pygments: true
 markdown: kramdown
 
-title: dbyll
-description: Stylish Jekyll Theme
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: 岂凡技术站
+
+title: 岂凡技术站
+description: 做真正有趣的游戏<br/>向所有玩家传播快乐
 author:
-  name: dbyll
-  email: dbyll@ismaildemirbilek.com
-  github: dbtek
-  twitter: dbtek
-  pinterest: asd123
-  linkedin: asd123
-  bio: Your stylish, minimalist theme!
-  email_md5: 726351295ec82e145928582f595aa3aa
+  name: 杨博
+  email: yangbo@qifun.com
+  github: qifun
+  twitter:
+  pinterest:
+  linkedin:
+  bio: 岂凡游戏架构师
+  email_md5: 50993397b1b5ed2eae8e50e25d9663e8
 
 rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
+encoding: utf-8
+timezone: CN
 
 BASE_PATH:
