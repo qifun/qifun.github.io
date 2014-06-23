@@ -14,9 +14,9 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: 岂凡技术站
+      title: 岂凡技术小站
 
-title: 岂凡技术站
+title: 岂凡技术小站
 description: 做真正有趣的游戏<br/>向所有玩家传播快乐
 author:
   name: 杨博
