@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+	{% if site.encoding %}
+	<meta charset="{{ site.encoding }}">
+	{% else %}
 	<meta charset="utf-8">
+	{% endif %}
 	<title>{{ page.title }}</title>
 	{% if page.description %}
 	<meta name="description" content="{{ page.description }}">
