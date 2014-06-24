@@ -33,5 +33,6 @@ categories_path: categories.html
 tags_path: tags.html
 encoding: utf-8
 timezone: CN
+permalink: /:year/:month/:day/:title
 
 BASE_PATH:
