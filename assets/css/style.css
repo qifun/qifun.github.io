@@ -137,7 +137,7 @@ article.home h4 a:hover {
   margin-right: 20px;
 }
 
-footer span {
+footer>div {
 	white-space: nowrap;
 	display: inline-block;
 }
