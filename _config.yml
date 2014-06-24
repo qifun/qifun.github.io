@@ -7,6 +7,7 @@ pygments: true
 github:
   is_user_page: true
   is_project_page: false
+  owner_url: "https://github.com/qifun"
 markdown: kramdown
 
 defaults:
@@ -18,15 +19,7 @@ defaults:
 
 title: 岂凡技术小站
 description: 做真正有趣的游戏<br/>向所有玩家传播快乐
-author:
-  name: 杨博
-  email: yangbo@qifun.com
-  github: qifun
-  twitter:
-  pinterest:
-  linkedin:
-  bio: 岂凡 游戏架构师
-  email_md5: 50993397b1b5ed2eae8e50e25d9663e8
+email: yangbo@qifun.com
 
 rss_path: feed.xml
 categories_path: categories.html
