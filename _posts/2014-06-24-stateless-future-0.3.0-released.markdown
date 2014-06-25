@@ -32,7 +32,7 @@ Stateless Future是岂凡网络开发的异步框架，主要功能有：
 
 ### 示例
 
-{% highlight scala linenos %}
+{% highlight scala %}
 // 用Stateless Future编写的异步TCP客户端
 Future {
   val socket = AsynchronousSocketChannel.open()
