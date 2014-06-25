@@ -48,7 +48,7 @@ Future {
 
 ### 相关链接
 
- * [项目首页](https://github.com/qifun/stateless-future)
+ * [Stateless Future项目首页](https://github.com/qifun/stateless-future)
  * [核心库API文档](http://central.maven.org/maven2/com/qifun/stateless-future_2.11/0.3.0/stateless-future_2.11-0.3.0-javadoc.jar)
  * [工具库API文档](http://central.maven.org/maven2/com/qifun/stateless-future-util_2.11/0.4.0/stateless-future-util_2.11-0.4.0-javadoc.jar)
  * [Akka整合库API文档](http://central.maven.org/maven2/com/qifun/stateless-future-akka_2.11/0.1.1/stateless-future-akka_2.11-0.1.1-javadoc.jar)
