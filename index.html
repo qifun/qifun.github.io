@@ -3,6 +3,25 @@ layout: page
 tagline:
 ---
 
+<section style="display:none" id="welcome-from-qifun-com">
+  <p>
+    您好！请问您在寻找岂凡公司的网站吗？<br/>
+    真是抱歉，那个网站还在建设中呢。
+  </p>
+  <p>
+    您现在光临的是小绽我的地盘，<a href="{{ site.BASE_PATH }}">岂凡技术小站</a>。</br/>
+    这儿都是呆萌呆萌的程序员。
+  </p>
+  <p>
+    小绽欢迎您！
+  </p>
+</section>
+<script type="text/javascript">
+if (document.referrer.match(/^https?:\/\/(www\.)qifun\.com\//) != null) {
+  document.getElementById("welcome-from-qifun-com").style.display = "block"
+}
+</script>
+
 {% for post in paginator.posts %}
 
 <article class="home">

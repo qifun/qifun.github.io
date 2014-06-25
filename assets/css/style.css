@@ -190,3 +190,9 @@ ul.dropdown-menu>li>a>i.fa {
     width: 1.3em;
 }
 
+#welcome-from-qifun-com {
+    background-color: #fdf7f7;
+	margin: 20px 5% 20px;
+    padding: 20px;
+    border-left: 3px solid #eee;
+}
