@@ -28,5 +28,9 @@ tags_path: tags.html
 encoding: utf-8
 timezone: CN
 permalink: /:year/:month/:day/:title
+gems:
+- jekyll-mentions
+- jekyll-redirect-from
+- jekyll-sitemap
 
 BASE_PATH:
