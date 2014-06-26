@@ -19,7 +19,7 @@ description: "假如你要编写I/O密集的网络服务器，使用Stateless Fu
 
 ## 初印象
 
-Scala一门静态类型语言，融合了函数式和面向对象的编程范式[^ScalaOverview]。Stateless Future贯彻了这一思路。
+Scala是一门静态类型语言，融合了函数式和面向对象的编程范式[^ScalaOverview]。Stateless Future贯彻了这一思路。
 
  * Stateless Future提供了命令式[^Imperative_programming]的语法风格。
  * Stateless Future生成的底层Java字节码大都属于纯函数式[^Functional_programming]风格，定义不可变数据结构，靠大量函数相互组合来完成操作。
