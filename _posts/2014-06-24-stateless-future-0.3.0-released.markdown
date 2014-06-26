@@ -2,6 +2,7 @@
 author:
   name: 杨博
   email: pop.atry@gmail.com
+  url: "http://www.ac.net.blog.163.com/"
   github: Atry
   bio: 岂凡 游戏架构师
   email_md5: 5b3c5026fee43baef3b15d7fef166a7e

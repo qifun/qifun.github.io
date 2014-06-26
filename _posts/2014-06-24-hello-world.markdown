@@ -2,6 +2,7 @@
 author:
   name: 小绽
   email: yangbo@qifun.com
+  url: "http://qforce.qifun.com/"
   github: qifun
   bio: 岂凡技术小站
   email_md5: 50993397b1b5ed2eae8e50e25d9663e8 
