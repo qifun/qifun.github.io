@@ -13,7 +13,7 @@ tags: [scala,stateless-future,异步]
 description: "假如你要编写I/O密集的网络服务器，使用Stateless Future + Java NIO.2的组合，可以轻易达到Java平台的理论最高性能。"
 ---
 
-Stateless Future是我为岂凡开发的异步编程框架，是岂凡下一代QForce游戏引擎的服务器基础库。
+[Stateless Future](https://github.com/qifun/stateless-future)是我为岂凡开发的异步编程框架，是岂凡下一代QForce游戏引擎的服务器基础库。
 
 前些日子，岂凡已经将Stateless Future及其相关的工具库开源。Stateless Future用途广泛，我们认为，在网络和文件IO、Actor模型的并行计算、基于状态机的人工智能领域中，如果应用Stateless Future的异步模型，都能比传统的Java/Scala的同步风格或事件风格的代码，更为简练，更易于学习和维护。
 
