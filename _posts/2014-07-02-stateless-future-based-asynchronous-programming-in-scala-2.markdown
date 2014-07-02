@@ -1,9 +1,16 @@
 ---
+author:
+  name: 杨博
+  email: pop.atry@gmail.com
+  url: "http://www.ac.net.blog.163.com/"
+  github: Atry
+  bio: 岂凡 游戏架构师
+  email_md5: 5b3c5026fee43baef3b15d7fef166a7e
 layout: post
 title: "基于Stateless Future的Scala异步编程（二）欠条"
 categories: [程序设计]
 tags: [scala,stateless-future,异步,欠条,for,comprehension]
-description:
+description: "一个Future对象，就是一张将来可能兑现的**欠条**。"
 ---
 
 **Future**是指尚未完成的操作。在异步编程中，这些操作结果将来会在操作完成后，再传给回调函数。换句话说，一个Future对象，就是一张将来可能兑现的**欠条**。
