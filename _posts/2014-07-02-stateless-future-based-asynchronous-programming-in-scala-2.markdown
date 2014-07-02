@@ -15,9 +15,9 @@ description: "<code>Future</code>对象，就是将来兑现的<strong>欠条</s
 
 **Future**是指尚未完成的操作。在异步编程中，这些操作结果将来会在操作完成后，再传给回调函数。换句话说，一个`Future`对象，就是一张将来可能兑现的**欠条**。
 
-## 欠条的兑现
+## 兑现欠条
 
-有两种语法等待一张欠条兑现，`await`占位方法和`for`推导式[^ForComprehension]风格。
+有两种语法等待一张欠条兑现，`await`和`for`推导式[^ForComprehension]风格。
 
 ### 用`await`等待欠条兑现
 
