@@ -17,7 +17,7 @@ description: "欠条可以分为两类：无状态欠条和有状态欠条。"
 
 ### 有状态欠条
 
-有状态欠条的类型为[Stateful]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html#Stateful[+AwaitResult]:Stateful[AwaitResult])，从[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package.html#Future[+AwaitResult]:Future[AwaitResult])派生。
+有状态欠条的类型为[Future.Stateful]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html#Stateful[+AwaitResult]:Stateful[AwaitResult])，从[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package.html#Future[+AwaitResult]:Future[AwaitResult])派生。
 
 有状态欠条表示**正在进行**中的操作。可以通过调用[value]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable$$Stateful.html#value:Option[scala.util.Try[AwaitResult]])和[isCompleted]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable$$Stateful.html#isCompleted:Boolean)查询操作是否已经成功完成。
 
@@ -34,7 +34,7 @@ val myStatelessFuture2:Future.Stateless[Unit] = myResponder
 
 ### 无状态欠条
 
-无状态欠条的类型为[Stateless]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html#Stateless[+AwaitResult]:Stateless[AwaitResult])，也从[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package.html#Future[+AwaitResult]:Future[AwaitResult])派生。
+无状态欠条的类型为[Future.Stateless]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html#Stateless[+AwaitResult]:Stateless[AwaitResult])，也从[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package.html#Future[+AwaitResult]:Future[AwaitResult])派生。
 
 无状态欠条是Stateless Future框架的核心特性，Scala标准库中没有类似的概念。Stateless Future框架之所以叫这个名字，也正是因为其特有的无状态欠条。
 
