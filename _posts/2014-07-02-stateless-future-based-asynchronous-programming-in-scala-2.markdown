@@ -13,17 +13,17 @@ tags: [scala,stateless-future,异步,欠条,for,comprehension]
 description: "<code>Future</code>对象，就是将来兑现的<strong>欠条</strong>。"
 ---
 
-**Future**是指尚未完成的操作。在异步编程中，这些操作结果将来会在操作完成后，再传给回调函数。换句话说，一个`Future`对象，就是一张将来可能兑现的**欠条**。
+**Future**是指尚未完成的操作。在异步编程中，这些操作结果将来会在操作完成后，再传给回调函数。换句话说，一个[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package.html#Future[+AwaitResult]:Future[AwaitResult])对象，就是一张将来可能兑现的**欠条**。
 
-在Stateless Future框架中，欠条对应类型为`com.qifun.statelessFuture.Future[AwaitResult]`。其中，`AwaitResult`类型参数表示，欠条兑现时，将会给付的结果类型。
+在Stateless Future框架中，欠条对应类型为[com.qifun.statelessFuture.Future[AwaitResult]]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package.html#Future[+AwaitResult]:Future[AwaitResult])。其中，`AwaitResult`类型参数表示，欠条兑现时，将会给付的结果类型。
 
 ## 兑现欠条
 
-有两种语法等待一张欠条兑现，`await`和`for`推导式[^ForComprehension]风格。
+有两种语法等待一张欠条兑现，[await]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)语法和`for`推导式[^ForComprehension]语法。
 
-### 用`await`等待欠条兑现
+### 用[await]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)等待欠条兑现
 
-调用`await`方法的语义是导致执行流暂停，一直等到欠条兑现才返回。`await`的返回值就是欠条兑现的结果。我在前一节中讲过，`await`会被`Future`宏替换成`onComplete`，并不真正阻塞线程：
+[await]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)方法的语义是暂停执行流，一直等到欠条兑现才返回，其返回值就是欠条兑现的结果。我在前一节中讲过，[await]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)会被[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)宏替换成[onComplete]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#onComplete((AwaitResult)⇒TailRec[TailRecResult])(Catcher[TailRec[TailRecResult]]):TailRec[TailRecResult])，并不真正阻塞线程：
 
 {% highlight scala %}
 Nio2Future.connect(socket, new InetSocketAddress("www.qifun.com", 80)).await
@@ -37,11 +37,11 @@ readAll(socket, response).await
 writeAll(socket, request).await
 {% endhighlight %}
 
-在上述例子中，`await`表示顺序等待操作，必须出现在`Future`块中。如果在`Future`外使用`await`，就会导致``` `await` must be enclosed in a `Future` block```的编译错误。
+在上述例子中，[await]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)表示顺序等待操作，必须出现在[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)块中。如果在[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)外使用[await]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)，就会导致``` `await` must be enclosed in a `Future` block```的编译错误。
 
 #### 嵌套函数
 
-需要注意，在`Future`块中的内嵌函数中，一般也不能用`await`：
+需要注意，在[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)块中的内嵌函数中，一般也不能用[await]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)：
 
 {% highlight scala %}
 val myFuture = Future {
@@ -52,7 +52,7 @@ val myFuture = Future {
 }
 {% endhighlight %}
 
-幸好`Future`可以嵌套，所以你可以这样写：
+幸好[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package.html#Future[+AwaitResult]:Future[AwaitResult])可以嵌套，所以你可以这样写：
 
 {% highlight scala %}
 val myFuture = Future {
@@ -110,7 +110,7 @@ val myFuture3: Future[MyResult] = for (result1 <- myFuture1; result2 <- getMyFut
 }
 {% endhighlight %}
 
-用`for`/`yield`创建的欠条，属于**无状态欠条**，支持**惰性执行**。创建这张新欠条时并不会发起`myFuture`或`getMyFuture2(result1)`所对应的异步操作，而要等到对新欠条调用`await`或者不含`yield`的`for`时，才会发起操作：
+用`for`/`yield`创建的欠条，属于**无状态欠条**，支持**惰性执行**。创建这张新欠条时并不会发起`myFuture`或`getMyFuture2(result1)`所对应的异步操作，而要等到对新欠条调用[await]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)或者不含`yield`的`for`时，才会发起操作：
 
 {% highlight scala %}
 for (result3 <- myFuture3) {
@@ -118,7 +118,7 @@ for (result3 <- myFuture3) {
 }
 {% endhighlight %}
 
-当然，你也可以用前面学过的`Future`/`await`来合并欠条。以下代码与上方的`for`/`yield`示例，功能完全相同：
+当然，你也可以用前面学过的[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)/[await]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)来合并欠条。以下代码与上方的`for`/`yield`示例，功能完全相同：
 
 {% highlight scala %}
 case class MyResult(result1: Result1, result2: Result2)
