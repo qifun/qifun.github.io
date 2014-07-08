@@ -1,6 +1,6 @@
 [submodule "stateless-future"]
 	path = stateless-future
-	url = git@github.com:qifun/stateless-future.git
+	url = https://github.com/qifun/stateless-future.git
 [submodule "stateless-future-util"]
 	path = stateless-future-util
-	url = git@github.com:qifun/stateless-future-util.git
+	url = https://github.com/qifun/stateless-future-util.git
