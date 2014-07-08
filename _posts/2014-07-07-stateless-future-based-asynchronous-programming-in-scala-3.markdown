@@ -19,7 +19,7 @@ description: "欠条可以分为两类：无状态欠条和有状态欠条。"
 
 有状态欠条的类型为[Future.Stateful]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html#Stateful[+AwaitResult]:Stateful[AwaitResult])，从[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package.html#Future[+AwaitResult]:Future[AwaitResult])派生。
 
-有状态欠条表示**正在进行**中的操作。可以通过调用[value]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable$$Stateful.html#value:Option[scala.util.Try[AwaitResult]])和[isCompleted]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable$$Stateful.html#isCompleted:Boolean)查询操作是否已经成功完成。
+有状态欠条表示**正在进行**中的操作。可以通过[value]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable$$Stateful.html#value:Option[scala.util.Try[AwaitResult]])和[isCompleted]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable$$Stateful.html#isCompleted:Boolean)查询操作是否已经成功完成。
 
 有状态欠条可以和`scala.concurrent.Future`相互隐式转换，但需要提供`ExecutionContext`隐式参数：
 
