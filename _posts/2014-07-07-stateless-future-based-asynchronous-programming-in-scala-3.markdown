@@ -24,10 +24,10 @@ description: "欠条可以分为两类：无状态欠条和有状态欠条。"
 有状态欠条可以和`scala.concurrent.Future`相互隐式转换，但需要提供`ExecutionContext`隐式参数：
 
 {% highlight scala %}
-val myStatelessFuture:Future.Stateless[Unit] = Future[Unit] {}
+val myStatefulFuture:Future.Stateful[Unit] = Promise.completeWith(Future[Unit] {})
 import scala.concurrent.ExecutionContext.Implicits.global
-val myConcurrentFuture:scala.concurrent.Future = myStatelessFuture
-val myStatelessFuture2:Future.Stateless[Unit] = myResponder
+val myConcurrentFuture:scala.concurrent.Future[Unit] = myStatefulFuture
+val myStatefulFuture2:Future.Stateful[Unit] = myConcurrentFuture
 {% endhighlight %}
 
 之所以需要提供`ExecutionContext`隐式参数，是因为`scala.concurrent.Future`不支持“线程无关”模型，必须要指定线程池才能运转。
