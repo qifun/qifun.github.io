@@ -41,7 +41,7 @@ val myStatefulFuture2: Future.Stateful[Unit] = myConcurrentFuture
 [初印象]({{ site.BASE_PATH }}/2014/06/26/stateless-future-based-asynchronous-programming-in-scala-1)一节的例子中出现的[Nio2Future]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/io/Nio2Future.html)，就属于无状态欠条。此外，[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)宏生成的也是无状态欠条，例如：
 
 {% highlight scala %}
-val myFuture:Future.Stateless[Unit] = Future[Unit] {}
+val myFuture: Future.Stateless[Unit] = Future[Unit] {}
 {% endhighlight %}
 
 无状态欠条中所有API签名都与有状态欠条一致，但是语义却有所不同。而且，相比有状态欠条，无状态欠条中缺少了[value]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable$$Stateful.html#value:Option[scala.util.Try[AwaitResult]])和[isCompleted]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable$$Stateful.html#isCompleted:Boolean)方法，无法查询欠条可否兑现（即操作是否完成）。
