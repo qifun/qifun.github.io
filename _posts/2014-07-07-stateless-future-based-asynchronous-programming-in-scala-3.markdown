@@ -24,10 +24,10 @@ description: "欠条可以分为两类：无状态欠条和有状态欠条。"
 有状态欠条可以和`scala.concurrent.Future`相互隐式转换，但需要提供`ExecutionContext`隐式参数：
 
 {% highlight scala %}
-val myStatefulFuture:Future.Stateful[Unit] = Promise.completeWith(Future[Unit] {})
+val myStatefulFuture: Future.Stateful[Unit] = Promise.completeWith(Future[Unit] {})
 import scala.concurrent.ExecutionContext.Implicits.global
-val myConcurrentFuture:scala.concurrent.Future[Unit] = myStatefulFuture
-val myStatefulFuture2:Future.Stateful[Unit] = myConcurrentFuture
+val myConcurrentFuture: scala.concurrent.Future[Unit] = myStatefulFuture
+val myStatefulFuture2: Future.Stateful[Unit] = myConcurrentFuture
 {% endhighlight %}
 
 之所以需要提供`ExecutionContext`隐式参数，是因为`scala.concurrent.Future`不支持“线程无关”模型，必须要指定线程池才能运转。
@@ -55,9 +55,9 @@ val myFuture:Future.Stateless[Unit] = Future[Unit] {}
 无状态欠条可以和`scala.Responder`相互隐式转换：
 
 {% highlight scala %}
-val myStatelessFuture:Future.Stateless[Unit] = Future[Unit] {}
-val myResponder:Responder = myStatelessFuture
-val myStatelessFuture2:Future.Stateless[Unit] = myResponder
+val myStatelessFuture: Future.Stateless[Unit] = Future[Unit] {}
+val myResponder: Responder = myStatelessFuture
+val myStatelessFuture2: Future.Stateless[Unit] = myResponder
 {% endhighlight %}
 
 ### 两类欠条的相互转换
@@ -65,9 +65,9 @@ val myStatelessFuture2:Future.Stateless[Unit] = myResponder
 要想把无状态欠条转换成有状态欠条，应使用[Promise]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Promise.html)，而要想把有状态欠条转换成无状态欠条，应使用[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)宏包装：
 
 {% highlight scala %}
-val myStatelessFuture:Future.Stateless[Unit] = Future[Unit] {}
-val myStatefulFuture:Future.Stateful[Unit] = Promise.completeWith(myStatelessFuture)
-val myStatelessFuture2:Future.Stateless[Unit] = Future[Unit] { myStatefulFuture.await }
+val myStatelessFuture: Future.Stateless[Unit] = Future[Unit] {}
+val myStatefulFuture: Future.Stateful[Unit] = Promise.completeWith(myStatelessFuture)
+val myStatelessFuture2: Future.Stateless[Unit] = Future[Unit] { myStatefulFuture.await }
 {% endhighlight %}
 
 
