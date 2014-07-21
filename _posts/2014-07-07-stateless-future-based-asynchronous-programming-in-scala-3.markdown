@@ -62,11 +62,12 @@ val myStatelessFuture2: Future.Stateless[Unit] = myResponder
 
 ### 两类欠条的相互转换
 
-要想把无状态欠条转换成有状态欠条，应使用[Promise]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Promise.html)，而要想把有状态欠条转换成无状态欠条，应使用[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)宏包装：
+要想把无状态欠条转换成有状态欠条，应使用[Future.Stateful]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html#Stateful[+AwaitResult]:Stateful[AwaitResult])的派生类[Promise]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Promise.html)，而要想把有状态欠条转换成无状态欠条，应使用[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)宏包装：
 
 {% highlight scala %}
 val myStatelessFuture: Future.Stateless[Unit] = Future[Unit] {}
-val myStatefulFuture: Future.Stateful[Unit] = Promise.completeWith(myStatelessFuture)
+val myStatefulFuture = Promise[Unit]
+myStatefulFuture.completeWith(myStatelessFuture)
 val myStatelessFuture2: Future.Stateless[Unit] = Future[Unit] { myStatefulFuture.await }
 {% endhighlight %}
 
