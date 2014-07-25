@@ -1,11 +1,11 @@
 ---
 author:
-  name: 杨博
-  email: pop.atry@gmail.com
-  url: "http://www.ac.net.blog.163.com/"
-  github: Atry
-  bio: 岂凡 游戏架构师
-  email_md5: 5b3c5026fee43baef3b15d7fef166a7e
+  name: 小绽
+  email: yangbo@qifun.com
+  url: "http://qforce.qifun.com/"
+  github: qifun
+  bio: 岂凡技术小站
+  email_md5: 50993397b1b5ed2eae8e50e25d9663e8 
 layout: post
 title: "Stateless Future 0.3.0发布"
 categories: [岂凡开源项目]
