@@ -18,13 +18,20 @@
 	<ul class="list-unstyled list-inline">
 		<li>
 			<a class="btn btn-default btn-sm" href="{{ site.github.owner_url }}">
-				<i class="fa fa-github-alt fa-lg"></i>
+				<i class="fa fa-github fa-lg"></i>
 			</a>
 		</li>
 		{% if site.twitter %}
 		<li>
 			<a class="btn btn-default btn-sm" href="https://twitter.com/{{ site.twitter }}">
 				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		{% endif %}
+		{% if site.bitbucket %}
+		<li>
+			<a class="btn btn-default btn-sm" href="http://bitbucket.org/{{ site.bitbucket }}">
+				<i class="fa fa-bitbucket fa-lg"></i>
 			</a>
 		</li>
 		{% endif %}
