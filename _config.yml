@@ -3,7 +3,7 @@
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 exclude: ["README.md", "Gemfile", "Gemfile.lock"] # files to exclude
-pygments: true
+highlighter: true
 github:
   is_user_page: true
   is_project_page: false
@@ -16,10 +16,10 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: å²‚å‡¡æŠ€æœ¯å°ç«™
+      title: Æñ·²¼¼ÊõĞ¡Õ¾
 
-title: å²‚å‡¡æŠ€æœ¯å°ç«™
-description: åšçœŸæ­£æœ‰è¶£çš„æ¸¸æˆ<br/>å‘æ‰€æœ‰ç©å®¶ä¼ æ’­å¿«ä¹
+title: Æñ·²¼¼ÊõĞ¡Õ¾
+description: ×öÕæÕıÓĞÈ¤µÄÓÎÏ·<br/>ÏòËùÓĞÍæ¼Ò´«²¥¿ìÀÖ
 bitbucket: qforce
 email: yangbo@qifun.com
 
