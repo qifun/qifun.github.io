@@ -17,7 +17,7 @@ Stateless Future支持发生器[^Generator]。发生器功能类似Scala的`for`
 
 ## 用法
 
-首先，想好你的容器中的元素类型，创建一个[Generator]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Generator.html)：
+首先，想好你的容器中的元素类型，创建一个[Generator]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Generator.html)：
 
 {% highlight scala %}
 import com.qifun.statelessFuture.util.Generator
@@ -34,7 +34,7 @@ val genFuture = gen.Future {
 }
 {% endhighlight %}
 
-`gen.Future`是一种特殊的`Future`，专门用于发生器。`gen.Future`与[com.qifun.statelessFuture.Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)的类型有微妙的区别，相互之间不能隐式转换。`gen.futureSeq`则类似[上一节]({{ site.BASE_PATH }}/2014/07/28/stateless-future-based-asynchronous-programming-in-scala-4/)中介绍的[futureSeq]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/AwaitableSeq$.html#futureSeq%5BA%5D%28TraversableOnce%5BA%5D%29%3AAwaitableSeq%5BA%2CUnit%5D)，可以配合`gen.Future`使用。
+`gen.Future`是一种特殊的`Future`，专门用于发生器。`gen.Future`与[com.qifun.statelessFuture.Future]({{ site.baseurl }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)的类型有微妙的区别，相互之间不能隐式转换。`gen.futureSeq`则类似[上一节]({{ site.baseurl }}/2014/07/28/stateless-future-based-asynchronous-programming-in-scala-4/)中介绍的[futureSeq]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/AwaitableSeq$.html#futureSeq%5BA%5D%28TraversableOnce%5BA%5D%29%3AAwaitableSeq%5BA%2CUnit%5D)，可以配合`gen.Future`使用。
 
 最后把`genFuture`转换成`gen.OutputSeq`：
 

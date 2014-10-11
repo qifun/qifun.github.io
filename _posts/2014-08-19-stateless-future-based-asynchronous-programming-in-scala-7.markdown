@@ -13,11 +13,11 @@ tags: [scala,stateless-future,异步,thread,线程,sleep,线程池,thread-pool]
 description: "基于<code>Future</code>宏的线程约定，Stateless Future的工具库额外提供了几个类，帮助程序员控制线程模型。"
 ---
 
-基于[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)宏的线程约定，Stateless Future的工具库额外提供了几个类，帮助程序员控制线程模型。
+基于[Future]({{ site.baseurl }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)宏的线程约定，Stateless Future的工具库额外提供了几个类，帮助程序员控制线程模型。
 
-## [JumpInto]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)
+## [JumpInto]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)
 
-[JumpInto]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)让[Future]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)宏中的代码切到指定的线程池中运行。
+[JumpInto]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)让[Future]({{ site.baseurl }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/package$$Future$.html)宏中的代码切到指定的线程池中运行。
 
 {% highlight scala %}
 import java.util.concurrent.Executors
@@ -50,13 +50,13 @@ println("After starting future1")
 	Current thread name is pool-15-thread-1 after JumpInto.
 	Result of future1 is RESULT.
 
-从输出可以知道，调用[JumpInto]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)以前的代码运行在`run-main-0`线程，而调用[JumpInto]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)以后的代码运行在`pool-15-thread-1`线程。
+从输出可以知道，调用[JumpInto]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)以前的代码运行在`run-main-0`线程，而调用[JumpInto]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)以后的代码运行在`pool-15-thread-1`线程。
 
-用[JumpInto]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)配合单线程的线程池，就构成了一个轻量级的消息队列，可以保证跳入了同一个线程池的代码都顺序进行，不会相互打断。[JumpInto]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)常常可以用来代替`synchronized`锁。
+用[JumpInto]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)配合单线程的线程池，就构成了一个轻量级的消息队列，可以保证跳入了同一个线程池的代码都顺序进行，不会相互打断。[JumpInto]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)常常可以用来代替`synchronized`锁。
 
-## [Sleep]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Sleep$.html)
+## [Sleep]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Sleep$.html)
 
-[Sleep]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Sleep$.html)类似[JumpInto]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)，也能切换线程池。但[Sleep]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Sleep$.html)会延后一段时间才继续执行后续代码，而不像[JumpInto]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)那样立即切换线程。
+[Sleep]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Sleep$.html)类似[JumpInto]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)，也能切换线程池。但[Sleep]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Sleep$.html)会延后一段时间才继续执行后续代码，而不像[JumpInto]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)那样立即切换线程。
 
 
 {% highlight scala %}
@@ -84,7 +84,7 @@ for (result <- future1) {
 println("After starting future1")
 {% endhighlight %}
 
-输出和[JumpInto]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)的例子差不多
+输出和[JumpInto]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/JumpInto.html)的例子差不多
 
 
 	Before starting future1
@@ -94,4 +94,4 @@ println("After starting future1")
 	Result of future1 is RESULT.
 
 
-二者区别在于[Sleep]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Sleep$.html)的例子会在输出`After starting future1`后停顿两秒，然后再继续输出剩下的信息。
+二者区别在于[Sleep]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Sleep$.html)的例子会在输出`After starting future1`后停顿两秒，然后再继续输出剩下的信息。

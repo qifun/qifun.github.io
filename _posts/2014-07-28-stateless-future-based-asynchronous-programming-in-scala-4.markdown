@@ -13,7 +13,7 @@ tags: [scala,stateless-future,异步,for,yield,await]
 description: "<code>futureSeq</code>函数可以解决<code>await</code>与<code>for</code>的冲突。"
 ---
 
-## `for`与[await]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)的冲突
+## `for`与[await]({{ site.baseurl }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)的冲突
 
 Scala提议标准`scala.async`有个缺陷：不支持`for`循环[^Issue32]。比如，类似这样的代码无法编译：
 
@@ -53,11 +53,11 @@ Future {
 }
 {% endhighlight %}
 
-由于上述代码中的[await]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)位于匿名函数`{ x => ... }`中，所以`await`与外层`Future`的关联就会阻断，最终导致编译错误。
+由于上述代码中的[await]({{ site.baseurl }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)位于匿名函数`{ x => ... }`中，所以`await`与外层`Future`的关联就会阻断，最终导致编译错误。
 
-## [futureSeq]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/AwaitableSeq$.html#futureSeq%5BA%5D%28TraversableOnce%5BA%5D%29%3AAwaitableSeq%5BA%2CUnit%5D)包装函数
+## [futureSeq]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/AwaitableSeq$.html#futureSeq%5BA%5D%28TraversableOnce%5BA%5D%29%3AAwaitableSeq%5BA%2CUnit%5D)包装函数
 
-幸好，Stateless Future的工具库中，有个[futureSeq]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/AwaitableSeq$.html#futureSeq%5BA%5D%28TraversableOnce%5BA%5D%29%3AAwaitableSeq%5BA%2CUnit%5D)函数可以解决[await]({{ site.BASE_PATH }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)与`for`的冲突。只要给`xs`包装一层[futureSeq]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/AwaitableSeq$.html#futureSeq%5BA%5D%28TraversableOnce%5BA%5D%29%3AAwaitableSeq%5BA%2CUnit%5D)就可以了。
+幸好，Stateless Future的工具库中，有个[futureSeq]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/AwaitableSeq$.html#futureSeq%5BA%5D%28TraversableOnce%5BA%5D%29%3AAwaitableSeq%5BA%2CUnit%5D)函数可以解决[await]({{ site.baseurl }}/stateless-future/0.3.1-SNAPSHOT/api/com/qifun/statelessFuture/Awaitable.html#await:AwaitResult)与`for`的冲突。只要给`xs`包装一层[futureSeq]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/AwaitableSeq$.html#futureSeq%5BA%5D%28TraversableOnce%5BA%5D%29%3AAwaitableSeq%5BA%2CUnit%5D)就可以了。
 
 {% highlight scala %}
 import com.qifun.statelessFuture.Future
@@ -70,7 +70,7 @@ Future {
 }
 {% endhighlight %}
 
-[futureSeq]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/AwaitableSeq$.html#futureSeq%5BA%5D%28TraversableOnce%5BA%5D%29%3AAwaitableSeq%5BA%2CUnit%5D) 也支持`for`/`yield`推导式：
+[futureSeq]({{ site.baseurl }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/AwaitableSeq$.html#futureSeq%5BA%5D%28TraversableOnce%5BA%5D%29%3AAwaitableSeq%5BA%2CUnit%5D) 也支持`for`/`yield`推导式：
 
 {% highlight scala %}
 import com.qifun.statelessFuture.Future
