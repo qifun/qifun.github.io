@@ -12,7 +12,7 @@ categories: [岂凡开源项目]
 tags: [岂凡,开源,sbt,haxe,java,scala]
 description: 岂凡网络开源了sbt-haxe 1.0.0，一个把Haxe编译为Java的Sbt插件。
 ---
-今天，岂凡网络开源了[sbt-haxe](https://bitbucket.org/qforce/sbt-haxe) 1.0.0，一个把Haxe编译为Java的Sbt插件。
+今天，岂凡网络开源了[sbt-haxe](https://bitbucket.org/qforce/sbt-haxe) 1.0.0，把Haxe编译为Java的Sbt插件。
 
 ## 用法
 

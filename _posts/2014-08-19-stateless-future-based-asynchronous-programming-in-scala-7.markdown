@@ -94,4 +94,4 @@ println("After starting future1")
 	Result of future1 is RESULT.
 
 
-区别在于[Sleep]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Sleep$.html)的例子会在输出`After starting future1`后停顿两秒，然后再继续输出剩下的信息。
+二者区别在于[Sleep]({{ site.BASE_PATH }}/stateless-future-util/0.5.0-SNAPSHOT/api/com/qifun/statelessFuture/util/Sleep$.html)的例子会在输出`After starting future1`后停顿两秒，然后再继续输出剩下的信息。
