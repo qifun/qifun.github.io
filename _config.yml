@@ -34,4 +34,4 @@ gems:
 - jekyll-redirect-from
 - jekyll-sitemap
 
-BASE_PATH:
+baseurl:
