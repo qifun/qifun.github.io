@@ -16,10 +16,10 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: Æñ·²¼¼ÊõĞ¡Õ¾
+      title: å²‚å‡¡æŠ€æœ¯å°ç«™
 
-title: Æñ·²¼¼ÊõĞ¡Õ¾
-description: ×öÕæÕıÓĞÈ¤µÄÓÎÏ·<br/>ÏòËùÓĞÍæ¼Ò´«²¥¿ìÀÖ
+title: å²‚å‡¡æŠ€æœ¯å°ç«™
+description: åšçœŸæ­£æœ‰è¶£çš„æ¸¸æˆ<br/>å‘æ‰€æœ‰ç©å®¶ä¼ æ’­å¿«ä¹
 bitbucket: qforce
 email: yangbo@qifun.com
 
