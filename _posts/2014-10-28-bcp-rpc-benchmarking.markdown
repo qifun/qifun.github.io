@@ -7,13 +7,13 @@ author:
   bio: 岂凡 软件工程师
   email_md5: 5851b66b5708deba39cb20fca4adf312
 layout: post
-title: "岂凡服务器游戏引擎性能评测"
+title: "岂凡游戏服务器引擎性能评测"
 categories: [性能评测]
 tags: [scala,benchmarking]
-description: "我们岂凡开发的服务器游戏引擎是一款高性能的引擎，可支持上万客户端同时在线！"
+description: "我们岂凡开发的游戏服务器引擎是一款高性能的引擎，可支持上万客户端同时在线！"
 ---
 
-本文详细分析了我们岂凡开发的[服务器游戏引擎](https://github.com/qifun)的性能评测数据和修改的bug。
+本文详细分析了我们岂凡开发的[游戏服务器引擎](https://github.com/qifun)的性能评测数据和修改的bug。
 
 ## 一、scala跟csharp单机性能评测
 
@@ -23,7 +23,7 @@ description: "我们岂凡开发的服务器游戏引擎是一款高性能的引
 
 ### 2. 测试数据
 
-<table>
+<table border="1">
 		<tr>
 				<td>登录新客户端时间(ms)</td>
 				<td>最大思考时间(ms)</td>
@@ -96,7 +96,7 @@ resetHeartBeatTimer占用CPU较高说明频繁取消并创建定时器是比较�
 
 经过上面漫长艰苦的修bug之后，服务器稳定了很多并且性能有了非常大的提升。下面图表就是单机性能评测的结果：
 
-<table>
+<table border="1">
 		<tr>
 				<td>新登客户端时间(ms)</td>
 				<td>发送数据间隔(ms)</td>
@@ -205,7 +205,7 @@ resetHeartBeatTimer占用CPU较高说明频繁取消并创建定时器是比较�
 
 多机性能评测结果：
 
-<table>
+<table border="1">
 		<tr>
 				<td>发送数据间隔(ms)</td>
 				<td>请求数据包大小(byte)</td>
