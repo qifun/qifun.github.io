@@ -30,7 +30,6 @@ description: "我们岂凡开发的游戏服务器引擎是一款高性能的引
  10 | 1000 | 4.61 | 5.95 | 4400个左右的客户端开始出现连接被关闭等异常 |
  10 | 10000 | 4.62 | 5.29 | 10900个左右的客户端开始出现连接被关闭等异常 |
 
-
 ### 3. 测试结果
 
 使用jvisualvm 性能分析工具发现，scala服务端的IO、HaxeException、resetHeartBeatTimer占用CPU较高，HaxeException大概占用了6%左右的CPU时间，而resetHeartBeatTimer大概占用了10%左右的CPU时间。
