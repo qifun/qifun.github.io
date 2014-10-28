@@ -198,6 +198,6 @@ ul.dropdown-menu>li>a>i.fa {
     border-left: 3px solid #eee;
 }
 
-table {
+table, th {
 	border: 1px solid black;
 }
