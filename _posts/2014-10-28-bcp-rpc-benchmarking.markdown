@@ -15,7 +15,12 @@ description: "我们岂凡开发的游戏服务器引擎是一款高性能的引
 
 本文详细分析了我们岂凡开发的[游戏服务器引擎](https://github.com/qifun)的性能评测数据和修改的bug。
 
-## 一、scala跟csharp单机性能评测
+## 一、服务器测试环境
+  * 操作系统：win7 64位
+  * CPU：Intel(R) Core(TM) i5-3570 CPU @ 3.40GHz
+  * 物理内存：8G
+
+## 二、scala跟csharp单机性能评测
 
 ### 1. 测试方法
 
@@ -40,7 +45,7 @@ resetHeartBeatTimer占用CPU较高说明频繁取消并创建定时器是比较�
 
 上述测试的IOPS并不高主要是因为这是单机连调并且由于csharp那边实现的性能有点低导致的（后来发现是由于许多bug导致的，修复之后性能就有了质的提升了）。通过看CPU占用发现csharp的CPU占用大概是scala的两倍左右。
 
-## 二、scala跟scala单机性能评测
+## 三、scala跟scala单机性能评测
 
 ### 1. 测试方法
 
@@ -85,7 +90,7 @@ resetHeartBeatTimer占用CPU较高说明频繁取消并创建定时器是比较�
 
 加大数据包的大小性能会稍微下降一点点，这是因为解包花了更多的CPU时间。
 
-## 三、scala跟scala多机性能评测
+## 四、scala跟scala多机性能评测
 
 ### 1. 测试方法
 
